@@ -298,6 +298,7 @@ const Mobile = styled.div `
     .mobile__menu-list ul {
         padding-top: 2.5rem;
         text-align: center;
+        list-style: none;
     }
 
     .mobile__menu-list ul li {

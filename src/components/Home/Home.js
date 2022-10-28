@@ -10,8 +10,8 @@ import Event from './Layout/Event/Event';
 import Friend from './Layout/Friend/Friend';
 import Footer from './Layout/Footer/Footer';
 import { Atm } from './Layout/Atm/Atm';
-import Friends from './Layout/friends/Friends';
 import Comment from './Layout/comment/Comment';
+import { Maps } from './Layout/maps/Maps';
 
 
 const Home = () => {
@@ -45,7 +45,9 @@ const Home = () => {
             </div>
             <div>
                 <Comment />
-                
+            </div>
+            <div>
+                <Maps />
             </div>
             <Footer />
         </div>

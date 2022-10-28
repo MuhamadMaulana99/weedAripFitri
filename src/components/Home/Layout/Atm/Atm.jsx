@@ -16,20 +16,20 @@ export const Atm = () => {
         <div class="selector">
           <label for="happy-radio" class="happy-card">
             <h1>Arip Susanto</h1>
-                <img src={arip}></img>
+                <img className="atmImg" src={arip}></img>
             <p>BCA</p>
           </label>
 
           <label for="lovers-radio" class="lovers-card">
             <h1>Fitri Handayani</h1>
-            <img src={fitri}></img>
+            <img className="atmImg" src={fitri}></img>
             <p>BCA</p>
           </label>
           <label for="happy-radio" class="happy-pick">
-            {/* <ArrowForwardIosIcon /> */}
+            {'<='}
           </label>
           <label for="lovers-radio" class="lovers-pick">
-            {/* <ArrowBackIosIcon /> */}
+          {'=>'}
           </label>
         </div>
       </div>

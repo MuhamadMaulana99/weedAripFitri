@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Timer } from './Timer';
 
 
 const Header = () => {
@@ -8,18 +9,19 @@ const Header = () => {
             <Headers>
                 <div className="header__content">
                     <div className='header__content1'>
+                        <div className='deco'>
+                            <img className='deco1' src="gambar/decoration/foliage-horizontal-1.svg" alt="" />
+                        </div>
                         <div className='decor1'>
                             <img src="gambar/decoration/card-decoration-section-3-1.svg" alt="" />
                             <img src="gambar/decoration/card-decoration-section-3-2.svg" alt="" />
-                        </div>
-                        <div className='decor'>
-                            <img src="gambar/decoration/foliage-horizontal-1.svg" alt="" />
                         </div>
                         <h2>Insya Allah Kami Menikah</h2>
                         <h2>Fitri</h2>
                         <h3>&</h3>
                         <h3>Arip</h3>
                         <h4>6 November 2022</h4>
+                        <div><Timer/></div>
                     </div>
                 </div>
             </Headers>
@@ -55,6 +57,7 @@ const Headers = styled.div`
     }
 
     .decor1{
+        width;  50px;
         @media(min-width:768px){
 
         } 
@@ -62,24 +65,24 @@ const Headers = styled.div`
     .decor1 img{
         width: 20px;
         @media(min-width:768px){
-            width: exp;
+            width: 50px;
         } 
     }
-    .decor{
+    .deco{
         position: absolute;
-        margin-top: 100px;
-        width: 10px;
-        top: 0;
+        top: 100px;
         left: 0;
+        width: 100%;
         @media(min-width:768px){
-            display: flex;
-            left: 48rem;
-            margin-top: 500px;
+            width: 0;
         } 
     }
-    .decor img{
-       
+    .deco .deco1{
+        width: 100%;
+        
         @media(min-width:768px){
+            width: 100%;
+            
         } 
     }
     .header__content{
@@ -101,6 +104,7 @@ const Headers = styled.div`
     .header__content1{
         color: #fff;
         font-family: 'Alex Brush', cursive;
+        // font-family: 'Tangerine', serif;
         font-size: 25px;
         font-weight: 500;
 
