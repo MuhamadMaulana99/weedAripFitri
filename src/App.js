@@ -4,13 +4,14 @@ import './App.css';
 import Home from './components/Home/Home';
 
 import { Switch, Route } from 'react-router-dom';
+import { Open } from './components/Home/Layout/open/Open';
 
 const App = () => {
     return (
         <>
             <Switch>
-                <Route exact path='/' component={Home}></Route>
-                {/* <Route path='/home' component={Home}></Route> */}
+                <Route exact path='/' component={Open}></Route>
+                <Route path='/home' component={Home}></Route>
             </Switch>
         </>
     )

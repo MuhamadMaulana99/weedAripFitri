@@ -12,11 +12,13 @@ import Footer from './Layout/Footer/Footer';
 import { Atm } from './Layout/Atm/Atm';
 import Comment from './Layout/comment/Comment';
 import { Maps } from './Layout/maps/Maps';
+import { Open } from './Layout/open/Open';
 
 
 const Home = () => {
     return (
         <div>
+            {/* <Open /> */}
             <Navbar />
             <div id="home">
                 <Header />

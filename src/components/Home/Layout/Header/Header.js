@@ -1,12 +1,54 @@
 import React from 'react';
+import ReactPlayer from 'react-player';
 import styled from 'styled-components';
+import { Motion } from './Motion';
 import { Timer } from './Timer';
+import lagu from './[Lyric] Marry Your Daughter - Brian McKnight.mp4';
+import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion/dist/es/index";
+
 
 
 const Header = () => {
+    const [ref, inView] = useInView({
+        threshold: 0.5
+        // triggerOnce: true
+    });
+
+    // Define headline animations
+    const headline = {
+        hidden: { opacity: 0, y: -15 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                delay: 0.15,
+                type: "spring",
+                damping: 100,
+                mass: 4
+            }
+        }
+    };
+
+    // Define paragraph animations
+    const paragraph = {
+        hidden: { opacity: 0, y: -20 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                delay: 0.05,
+                type: "spring",
+                damping: 100,
+                mass: 20
+            }
+        }
+    };
+
     return (
         <>
             <Headers>
+
                 <div className="header__content">
                     <div className='header__content1'>
                         <div className='deco'>
@@ -16,14 +58,31 @@ const Header = () => {
                             <img src="gambar/decoration/card-decoration-section-3-1.svg" alt="" />
                             <img src="gambar/decoration/card-decoration-section-3-2.svg" alt="" />
                         </div>
-                        <h2>Insya Allah Kami Menikah</h2>
-                        <h2>Fitri</h2>
-                        <h3>&</h3>
-                        <h3>Arip</h3>
-                        <h4>6 November 2022</h4>
-                        <div><Timer/></div>
+                        <motion.section
+                            ref={ref}
+                            initial="hidden"
+
+                            animate={inView ? "visible" : "hidden"}
+                        > <motion.div variants={paragraph}>
+
+                                <h2>Insya Allah Kami Menikah</h2>
+                                <h2>Fitri</h2>
+                                <h3>&</h3>
+                                <h3>Arip</h3>
+                                <h4>6 November 2022</h4>
+                            </motion.div>
+                        </motion.section>
+                        <div><Timer /></div>
                     </div>
                 </div>
+                <ReactPlayer
+                    url={lagu}
+                    width="0px"
+                    height="0px"
+                    playing={true}
+                    controls={true}
+                />
+                <Motion />
             </Headers>
         </>
     )
@@ -33,6 +92,9 @@ export default Header;
 
 
 const Headers = styled.div`
+#audio{
+    display: none;
+}
 
     width: 100%;
     height: 100vh;
