@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactPlayer from 'react-player';
 import styled from 'styled-components';
-import { Motion } from './Motion';
 import { Timer } from './Timer';
 import lagu from './[Lyric] Marry Your Daughter - Brian McKnight.mp4';
 import { useInView } from "react-intersection-observer";
@@ -14,23 +13,6 @@ const Header = () => {
         threshold: 0.5
         // triggerOnce: true
     });
-
-    // Define headline animations
-    const headline = {
-        hidden: { opacity: 0, y: -15 },
-        visible: {
-            opacity: 1,
-            y: 0,
-            transition: {
-                delay: 0.15,
-                type: "spring",
-                damping: 100,
-                mass: 4
-            }
-        }
-    };
-
-    // Define paragraph animations
     const paragraph = {
         hidden: { opacity: 0, y: -20 },
         visible: {
@@ -82,7 +64,6 @@ const Header = () => {
                     playing={true}
                     controls={true}
                 />
-                <Motion />
             </Headers>
         </>
     )

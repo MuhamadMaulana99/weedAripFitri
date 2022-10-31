@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faInstagram, faTwitter } from "@fortawesome/free-brands-svg-icons";
 
 const Couple = () => {
+
     return (
         <div>
             <Flower>
@@ -17,9 +18,11 @@ const Couple = () => {
                             <h4>Anak Ke Dua</h4>
                             <h4>Dari</h4>
                             <h4>Bapak Tarjo/ujo</h4>
-                            <p>Olivia fringilla dui at elit finibus viverra nec a lacus seda themo the miss druane semper sollicitudin non the fermen.</p>
+                            <p>Aku ingin mencintaimu dengan sederhana
+                                dengan kata yang tak sempat diucapkan
+                                kayu kepada api yang menjadikannya abu.</p>
                             <div className="social">
-                                <FontAwesomeIcon icon={faFacebookF} className="icon"  />
+                                <FontAwesomeIcon icon={faFacebookF} className="icon" />
                                 <FontAwesomeIcon icon={faTwitter} className="icon twitter" />
                                 <FontAwesomeIcon icon={faInstagram} className="icon" />
                             </div>
@@ -37,7 +40,10 @@ const Couple = () => {
                             <h4>Anak Ke Dua</h4>
                             <h4>Dari</h4>
                             <h4>Bapak Tarjo/ujo</h4>
-                            <p>Enrico fringilla dui at elit finibus viverra nec a lacus seda themo the miss druane semper sollicitudin non the fermen.</p>
+                            <p>Aku mungkin tidak selalu bersamamu
+                                Tapi saat kita berjauhan
+                                Ingatlah kamu akan bersamaku
+                                Tepat dalam hatiku</p>
                             <div className="social">
                                 <FontAwesomeIcon icon={faFacebookF} className="icon" />
                                 <FontAwesomeIcon icon={faTwitter} className="icon twitter" />
@@ -55,7 +61,7 @@ export default Couple;
 
 
 
-const Flower = styled.div `
+const Flower = styled.div`
 
    display: flex;
    justify-content: center;
@@ -73,14 +79,14 @@ const Flower = styled.div `
 `;
 
 
-const CoupleContainer = styled.div `
+const CoupleContainer = styled.div`
 
     max-width: 1140px;
     margin: 2rem auto;
     padding: 0 15px;
 
 `;
-const Box = styled.div `
+const Box = styled.div`
 
     display: grid;
     grid-gap: 2em;
@@ -130,7 +136,7 @@ const Box = styled.div `
     }
 
 `;
-const Bride = styled.div `
+const Bride = styled.div`
     display: flex;
 
 
@@ -167,7 +173,7 @@ const Bride = styled.div `
     
 
 `;
-const Groom = styled.div `
+const Groom = styled.div`
     display: flex;
 
 

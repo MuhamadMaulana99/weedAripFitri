@@ -1,14 +1,42 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion/dist/es/index";
 
 const BannerOne = () => {
+    const [ref, inView] = useInView({
+        threshold: 0.5
+        // triggerOnce: true
+    });
+    const paragraph = {
+        hidden: { opacity: 0, y: -20 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                delay: 0.05,
+                type: "spring",
+                damping: 100,
+                mass: 20
+            }
+        }
+    };
     return (
         <>
             <Container>
-                <div className="header__content">
-                    <img src="image/wedding.png" alt="wedding" />
-                    <h2>Fitri & Arip</h2>
-                </div>
+                <motion.section
+                    ref={ref}
+                    initial="hidden"
+
+                    animate={inView ? "visible" : "hidden"}
+                > <motion.div variants={paragraph}>
+                        <div className="header__content">
+                            <img src="image/wedding.png" alt="wedding" />
+                            <h2>Fitri & Arip</h2>
+                        </div>
+                    </motion.div>
+                </motion.section>
+
             </Container>
         </>
     )
@@ -17,7 +45,7 @@ const BannerOne = () => {
 export default BannerOne;
 
 
-const Container = styled.div `
+const Container = styled.div`
 
     width: 100%;
     height: 60vh;
@@ -53,7 +81,7 @@ const Container = styled.div `
         font-weight: 500;
 
         img {
-            width: 70px;
+            width: 0px;
             margin-bottom: 1rem;
         }
 

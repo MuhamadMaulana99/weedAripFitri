@@ -6,7 +6,7 @@ export const Motion = () => {
   return (
     <div>
       <motion.div
-      className="box"
+      // className="box"
       animate={{
         scale: [1, 2, 2, 1, 1],
         rotate: [0, 0, 180, 180, 0],

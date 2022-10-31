@@ -14,22 +14,22 @@ const Gallery = () => {
                     <h3>OUR MEMORIES</h3>
                     <ImagesContainer>
                         <div className="image">
-                            <img src="image/gallery/1.jpg" alt="photos-1" />
+                            <img src="gambar/pengantin/box1.jpeg" alt="photos-1" />
                         </div>
                         <div className="image">
-                            <img src="image/gallery/2.jpg" alt="photos-2" />
+                            <img src="gambar/pengantin/box2.jpeg" alt="photos-2" />
                         </div>
                         <div className="image">
-                            <img src="image/gallery/3.jpg" alt="photos-3" />
+                            <img src="gambar/pengantin/box3.jpeg" alt="photos-3" />
                         </div>
                         <div className="image">
-                            <img src="image/gallery/4.jpg" alt="photos-4" />
+                            <img src="gambar/pengantin/box7.jpeg" alt="photos-4" />
                         </div>
                         <div className="image">
-                            <img src="image/gallery/5.jpg" alt="photos-5" />
+                            <img src="gambar/pengantin/box5.jpeg" alt="photos-5" />
                         </div>
                         <div className="image">
-                            <img src="image/gallery/6.jpg" alt="photos-6" />
+                            <img src="gambar/pengantin/box6.jpeg" alt="photos-6" />
                         </div>
                        
                     </ImagesContainer>

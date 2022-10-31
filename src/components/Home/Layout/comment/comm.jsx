@@ -104,7 +104,7 @@ export default function Comm() {
                         >
                           "{item?.comment}"
                         </Typography>
-                        <Divider />
+                        <Divider  />
                       </React.Fragment>
                     }
                   />

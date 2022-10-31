@@ -9,12 +9,31 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { LoadingButton } from '@mui/lab'
 import axios from 'axios';
+import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion/dist/es/index";
 const RSVP = () => {
     const [data, setData] = useState();
     const [name, setName] = useState('');
     const [comment, setComment] = useState('');
     const [loading, setLoading] = useState(false)
     const [ignored, forceUpdate] = useReducer(x => x + 1, 0);
+    const [ref, inView] = useInView({
+        threshold: 0.5
+        // triggerOnce: true
+    });
+    const paragraph = {
+        hidden: { opacity: 0, y: -20 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                delay: 0.05,
+                type: "spring",
+                damping: 100,
+                mass: 20
+            }
+        }
+    };
 
 
     const getData = async () => {
@@ -57,7 +76,7 @@ const RSVP = () => {
                 setLoading(false)
                 setName('');
                 setComment('');
-                // getData();
+                window.location.reload(true);
             })
             .catch((err) => {
                 toast.error(' Pesan Gagal Terkirim!', {
@@ -81,50 +100,57 @@ const RSVP = () => {
         <>
 
             <Container>
-                <Box>
-                    <div className="form__box">
-                        <Badge color="success" badgeContent={data?.length}>
-                            <MailIcon />
-                        </Badge>
-                        {/* <Alert severity="success">{data?.length} Ucapan</Alert> */}
-                        <h2>Will you attend?</h2>
-                        <div className="title">R.S.V.P</div>
-                        <form className="form">
-                            <FormDiv className="form_div">
-                                <TextField
-                                    id="outlined-textarea"
-                                    label="Nama"
-                                    placeholder="Masukan Nama Anda"
-                                    value={name}
-                                    onChange={(e) => setName(e.target.value)}
-                                    multiline
-                                    color="warning"
-                                />
-                            </FormDiv>
-                            <FormDiv className="form_div">
-                                <TextField
-                                    id="outlined-textarea"
-                                    label="Pesan"
-                                    placeholder="Berikan Kami Ucapan"
-                                    value={comment}
-                                    onChange={(e) => setComment(e.target.value)}
-                                    multiline
-                                    color="warning"
-                                />
-                            </FormDiv>
-                            {loading 
-                            === true ? (
-                                <LoadingButton loading variant="outlined">
-                                    Submit
-                                </LoadingButton>
+                <motion.section
+                    ref={ref}
+                    initial="hidden"
 
-                            ) : (
-                                <Button disabled={comment === '' && comment === ''} variant="contained" endIcon={<SendIcon />} onClick={HandleSubmit}>Kirim</Button>
+                    animate={inView ? "visible" : "hidden"}
+                > <motion.div variants={paragraph}>
+                        <Box>
+                            <div className="form__box">
+                                <Badge color="success" badgeContent={data?.length}>
+                                    <MailIcon />
+                                </Badge>
+                                {/* <Alert severity="success">{data?.length} Ucapan</Alert> */}
+                                <h2>Will you attend?</h2>
+                                <div className="title">R.S.V.P</div>
+                                <form className="form">
+                                    <FormDiv className="form_div">
+                                        <TextField
+                                            id="outlined-textarea"
+                                            label="Nama"
+                                            placeholder="Masukan Nama Anda"
+                                            value={name}
+                                            onChange={(e) => setName(e.target.value)}
+                                            multiline
+                                            color="warning"
+                                        />
+                                    </FormDiv>
+                                    <FormDiv className="form_div">
+                                        <TextField
+                                            id="outlined-textarea"
+                                            label="Pesan"
+                                            placeholder="Berikan Kami Ucapan"
+                                            value={comment}
+                                            onChange={(e) => setComment(e.target.value)}
+                                            multiline
+                                            color="warning"
+                                        />
+                                    </FormDiv>
+                                    {loading
+                                        === true ? (
+                                        <LoadingButton loading variant="outlined">
+                                            Submit
+                                        </LoadingButton>
 
-                            )}
-                        </form>
-                    </div>
-                </Box>
+                                    ) : (
+                                        <Button disabled={comment === '' && comment === ''} variant="contained" endIcon={<SendIcon />} onClick={HandleSubmit}>Kirim</Button>
+                                    )}
+                                </form>
+                            </div>
+                        </Box>
+                    </motion.div>
+                </motion.section>
             </Container>
             <ToastContainer />
 

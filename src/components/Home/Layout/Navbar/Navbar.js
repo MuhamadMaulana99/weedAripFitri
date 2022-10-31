@@ -60,7 +60,6 @@ const Navbar = () => {
                             <li><a href="#home">Home</a></li>
                             <li><a href="#couple">Couple</a></li>
                             <li><a href="#ourStory">Our Story</a></li>
-                            <li><a href="#event">Event</a></li>
                             <li><a href="#friend">Friends</a></li>
                             <li><a href="#gallery">Gallery</a></li>
                             <li><a href="#rsvp">R.S.V.P</a></li>
@@ -82,7 +81,6 @@ const Navbar = () => {
                         <li><a href="#home" class="mobile__item">Home</a></li>
                         <li><a href="#couple" class="mobile__item">Couple</a></li>
                         <li><a href="#ourStory" class="mobile__item">Our Story</a></li>
-                        <li><a href="#event" class="mobile__item">Event</a></li>
                         <li><a href="#friend" class="mobile__item">Friends</a></li>
                         <li><a href="#gallery" class="mobile__item">Gallery</a></li>
                         <li><a href="#rsvp" class="mobile__item">R.S.V.P</a></li>

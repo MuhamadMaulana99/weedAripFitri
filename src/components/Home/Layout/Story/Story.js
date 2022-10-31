@@ -1,30 +1,56 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion/dist/es/index";
 
 
 const Story = () => {
+    const [ref, inView] = useInView({
+        threshold: 0.5
+        // triggerOnce: true
+    });
+    const paragraph = {
+        hidden: { opacity: 0, y: -20 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                delay: 0.05,
+                type: "spring",
+                damping: 100,
+                mass: 20
+            }
+        }
+    };
     return (
         <div>
             <Flower>
                 <img src="image/gif/flowers2.gif" alt="Flowers" />
             </Flower>
-
             <StoryContainer>
                 <Box>
-                    <div className="image">
-                        <img src="gambar/pengantin/ourStory.jpeg" alt="couple" />
-                    </div>
-                    <div className="info">
-                        <h4>Our Love</h4>
-                        <h2>OUR STORY</h2>
-                        <p>Curabit aliquet orci elit genes tristique lorem commodo vitae. Tuliaum tincidunt nete sede gravida aliquam, neque libero hendrerit magna, sit amet mollis lacus ithe maurise. <br/> 
-                        Dunya erat volutpat edat themo the druanye semper.Luality fringilla duiman at elit vinibus viverra nec a lacus themo the druanye sene sollicitudin mi suscipit non sagie the fermen. <br/>
-                        Phasellus viverra tristique justo duis vitae diam neque nivamus ac est augue artine aringilla dui at elit finibus viverra nec a lacus. Nedana themo eros odio semper soe suscipit non. Curabit aliquet orci elit genes tristique.</p>
-                        <h3>Dec 5th, 2021, We Said Yes!</h3>
-                        <p>Luality fringilla duiman at elit finibus viverra nec a lacus themo the druanye sene sollicitudin mi suscipit non sagie the fermen.</p>
-                    </div>
+                    <motion.section
+                        ref={ref}
+                        initial="hidden"
+
+                        animate={inView ? "visible" : "hidden"}
+                    > <motion.div variants={paragraph}>
+                            <div className="image">
+                                <img src="gambar/pengantin/ourStory.jpeg" alt="couple" />
+                            </div>
+                            <div className="info">
+                                <h4>Our Love</h4>
+                                <h2>OUR STORY</h2>
+                                <p>Masih ingat sekali hari di mana kami berkenalan saat SMP. Dia berinisiatif untuk berkenalan, menjadi sebuah awal dari semua ini. dan pada tanggal 9 april 2016 setelah lulus pada saat Reuni Awalnya ragu dan takut dia hanya bercanda atau serius. Namun dia sungguh datang dan sekarang kami sedang mempersiapkan rencana pernikahan kami.</p>
+                                <h3>16 oktober 2022, We Said Yes!</h3>
+                                <p>Momen penting ini menandai awal dari hidup bersama. Semoga perjalanan kita berdua menjadi bahagia yang penuh dengan kedamaian dan harmoni, sukacita dan tawa, romansa dan gairah. Semoga cinta abadi kita menjadi permata mahkota yang mengikat semuanya.</p>
+                            </div>
+                        </motion.div>
+                    </motion.section>
                 </Box>
-            </StoryContainer>            
+            </StoryContainer>
+
+
         </div>
     )
 }
@@ -32,7 +58,7 @@ const Story = () => {
 export default Story;
 
 
-const Flower = styled.div `
+const Flower = styled.div`
 
    display: flex;
    justify-content: center;
@@ -52,14 +78,14 @@ const Flower = styled.div `
 
 
 
-const StoryContainer = styled.div `
+const StoryContainer = styled.div`
 
     max-width: 1140px;
     margin: 2rem auto;
     padding: 0 15px;
 
 `;
-const Box = styled.div `
+const Box = styled.div`
 
     display: grid;
     grid-gap: 2em;
