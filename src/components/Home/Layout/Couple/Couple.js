@@ -15,9 +15,9 @@ const Couple = () => {
                     <Bride>
                         <div className="info">
                             <h2>Fitri Handayani</h2>
-                            <h4>Anak Ke Dua</h4>
+                            <h4>Anak Ke Empat</h4>
                             <h4>Dari</h4>
-                            <h4>Bapak Tarjo/ujo</h4>
+                            <h4>Bapak Rohmat & Ibu Nailah</h4>
                             <p>Aku ingin mencintaimu dengan sederhana
                                 dengan kata yang tak sempat diucapkan
                                 kayu kepada api yang menjadikannya abu.</p>
@@ -37,9 +37,9 @@ const Couple = () => {
                         </div>
                         <div className="info">
                             <h2>Arip Susanto</h2>
-                            <h4>Anak Ke Dua</h4>
+                            <h4>Anak Ke Tiga</h4>
                             <h4>Dari</h4>
-                            <h4>Bapak Tarjo/ujo</h4>
+                            <h4>Bapak Sutarjo/ujo & Ibu Rosih</h4>
                             <p>Aku mungkin tidak selalu bersamamu
                                 Tapi saat kita berjauhan
                                 Ingatlah kamu akan bersamaku

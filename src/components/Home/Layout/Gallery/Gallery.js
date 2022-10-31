@@ -17,7 +17,7 @@ const Gallery = () => {
                             <img src="gambar/pengantin/box1.jpeg" alt="photos-1" />
                         </div>
                         <div className="image">
-                            <img src="gambar/pengantin/box2.jpeg" alt="photos-2" />
+                            <img src="gambar/pengantin/header.jpeg" alt="photos-2" />
                         </div>
                         <div className="image">
                             <img src="gambar/pengantin/box3.jpeg" alt="photos-3" />
