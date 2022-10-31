@@ -17,7 +17,7 @@ const Couple = () => {
                             <h2>Fitri Handayani</h2>
                             <h4>Anak Ke Empat</h4>
                             <h4>Dari</h4>
-                            <h4>Bapak Rohmat & Ibu Nailah</h4>
+                            <h4>Bapak Rohmat & Ibu Naelah</h4>
                             <p>Aku ingin mencintaimu dengan sederhana
                                 dengan kata yang tak sempat diucapkan
                                 kayu kepada api yang menjadikannya abu.</p>
